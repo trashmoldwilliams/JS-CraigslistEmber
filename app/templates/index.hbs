@@ -1,14 +1,10 @@
 
 <div class = "col-sm-6">
   <h1>House Column</h1>
-  <button class = "btn btn-danger">Sort By Cost</button>
-  <button class = "btn btn-info">Sort By Date</button>
-  <button class = "btn btn-success">Sort By Rooms</button>
 
 
-{{#each model.houses as |house|}}
-  {{house-tile house=house}}
-{{/each}}
+
+{{house-tile model=model.houses}}
 
 
 {{new-house save2="saveHouse"}}

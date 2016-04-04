@@ -6,7 +6,7 @@ export default Ember.Component.extend({
       console.log("save1");
       var params = {
         rooms: this.get('rooms'),
-        cost: this.get('cost'),
+        cost: parseInt(this.get('cost')),
         pets: this.get('pets'),
         address: this.get('address'),
         date: Date(),

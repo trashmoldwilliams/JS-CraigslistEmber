@@ -1,9 +1,33 @@
+
+<button {{action 'costSort'}} class = "btn btn-danger">Sort By Cost</button>
+<button {{action 'dateSort'}} class = "btn btn-info">Sort By Date</button>
+
+{{#if cost}}
+Cost SORTING SECTION
+{{#each costSortedHouses as |house|}}
 ////House Template////
 <br />
 Rooms: {{house.rooms}}
 <br />
-Pets: {{house.pets}}
+Cost: {{house.cost}}
 <br />
 Date Posted: {{house.date}}
 <br />
 ///////////////
+{{/each}}
+{{/if}}
+
+{{#if date}}
+DATE SORTING SECTION
+{{#each dateSortedHouses as |house|}}
+////House Template////
+<br />
+Rooms: {{house.rooms}}
+<br />
+Cost: {{house.cost}}
+<br />
+Date Posted: {{house.date}}
+<br />
+///////////////
+{{/each}}
+{{/if}}
