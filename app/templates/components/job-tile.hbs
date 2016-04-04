@@ -1,9 +1,33 @@
-////Job Template////
+<button {{action 'paySort'}} class = "btn btn-danger">Sort By Pay</button>
+<button {{action 'dateSort'}} class = "btn btn-info">Sort By Date</button>
+
+
+{{#if pay}}
+{{#each paySortedJobs as |job|}}
+<div class = "section">
 <br />
 Title: {{job.title}}
 <br />
-Pay: {{job.pay}}
+Pay: {{job.pay}}{{job-popularity job}}
+
 <br />
 Date Posted: {{job.date}}
 <br />
-///////////////
+</div>
+
+{{/each}}
+{{/if}}
+
+{{#if date}}
+{{#each dateSortedJobs as |job|}}
+<div class = "section">
+<br />
+Title: {{job.title}}
+<br />
+Pay: {{job.pay}}{{job-popularity job}}
+<br />
+Date Posted: {{job.date}}
+<br />
+</div>
+{{/each}}
+{{/if}}

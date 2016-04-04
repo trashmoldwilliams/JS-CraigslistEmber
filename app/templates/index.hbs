@@ -1,10 +1,15 @@
 
+
+<button class = "btn btn-success">Create New Category</button>
+<br />
+
+
 <div class = "col-sm-6">
   <h1>House Column</h1>
 
 
 
-{{house-tile model=model.houses}}
+{{house-tile model=model.houses destroyHouse="destroyHouse"}}
 
 
 {{new-house save2="saveHouse"}}
@@ -12,12 +17,10 @@
 </div>
 
 <div class = "col-sm-6">
-  <button class = "btn btn-danger">Sort By Pay</button>
-  <button class = "btn btn-info">Sort By Date</button>
+
 <h1>Jobs Column</h1>
-{{#each model.jobs as |job|}}
-  {{job-tile job=job}}
-{{/each}}
+
+{{job-tile model=model.jobs}}
 
 {{new-job saveJob="saveJob"}}
 

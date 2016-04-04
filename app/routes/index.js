@@ -14,11 +14,14 @@ export default Ember.Route.extend({
       this.transitionTo('index');
     },
     saveJob(params) {
-      console.log("Server SaveJob")
       var newJob = this.store.createRecord('job', params);
       console.log(params);
       console.log(newJob);
       newJob.save();
+      this.transitionTo('index');
+    },
+    destroyHouse(house) {
+      house.destroyRecord();
       this.transitionTo('index');
     }
   }

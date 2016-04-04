@@ -3,31 +3,32 @@
 <button {{action 'dateSort'}} class = "btn btn-info">Sort By Date</button>
 
 {{#if cost}}
-Cost SORTING SECTION
 {{#each costSortedHouses as |house|}}
-////House Template////
+<div class = "section">
 <br />
-Rooms: {{house.rooms}}
+{{#link-to 'house' house.id}}Rooms: {{house.rooms}}{{/link-to}}
 <br />
-Cost: {{house.cost}}
+Cost: {{house.cost}}{{house-popularity house}}
 <br />
 Date Posted: {{house.date}}
 <br />
-///////////////
+<button class = "btn btn-warning"{{action 'delete' house}}>Delete</button>
+
+</div>
 {{/each}}
 {{/if}}
 
 {{#if date}}
-DATE SORTING SECTION
 {{#each dateSortedHouses as |house|}}
-////House Template////
+<div class = "section">
 <br />
 Rooms: {{house.rooms}}
 <br />
-Cost: {{house.cost}}
+Cost: {{house.cost}}{{house-popularity house}}
 <br />
 Date Posted: {{house.date}}
 <br />
-///////////////
+<button class = "btn btn-warning"{{action 'delete' house}}>Delete</button>
+</div>
 {{/each}}
 {{/if}}
